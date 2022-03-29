@@ -80,7 +80,64 @@ class Puzzle:
         sum_of_kurang_i = sum(self.kurang_i)
         result = sum_of_kurang_i + self.value_X
         print("Nilai dari Σ(i=1,16) KURANG(i) + X adalah", result)
-    
+
+    def move_up(self):
+        pos_16 = self.find_ubin_position(16)
+        row,col = self.pos_to_rowcol(pos_16)
+        if row!=0:
+            swap = self.puzzle[row-1][col]
+            self.puzzle[row][col]=swap
+            self.puzzle[row-1][col]=16
+            return "UP"
+        else:
+            return
+
+    def move_down(self):
+        pos_16 = self.find_ubin_position(16)
+        row,col = self.pos_to_rowcol(pos_16)
+        if row!=3:
+            swap = self.puzzle[row+1][col]
+            self.puzzle[row][col]=swap
+            self.puzzle[row+1][col]=16
+            return "DOWN"
+        else:
+            return
+
+    def move_left(self):
+        pos_16 = self.find_ubin_position(16)
+        row,col = self.pos_to_rowcol(pos_16)
+        if col!=0:
+            swap = self.puzzle[row][col-1]
+            self.puzzle[row][col]=swap
+            self.puzzle[row][col-1]=16
+            return "LEFT"
+        else:
+            return
+
+    def move_right(self):
+        pos_16 = self.find_ubin_position(16)
+        row,col = self.pos_to_rowcol(pos_16)
+        if col!=3:
+            swap = self.puzzle[row][col+1]
+            self.puzzle[row][col]=swap
+            self.puzzle[row][col+1]=16
+            return "RIGHT"
+        else:
+            return 
+
+    def calc_compare(self):
+        count = 0
+        for i in range(15):
+            if (self.pos_to_number(i+1) != i+1):
+                count+=1
+        return count
+
+
+class Node:
+    id = 0
+    def __init__(self):
+        self.id+=1
+
 
 
     
