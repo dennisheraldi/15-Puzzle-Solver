@@ -2,7 +2,6 @@ from queue import PriorityQueue
 from copy import deepcopy
 from Puzzle import Puzzle
 
-
 class Node:
     def __init__(self, parent, puzzle_obj, level):
         self.parent = deepcopy(parent) # parent node
@@ -36,22 +35,14 @@ class SolvePuzzle:
 
             e_node = live_node.get()
 
-            if (e_node.parent == None): # Pembangkitan simpul anak pertama kali 
-                for i in range(4): # perpindahan dilakukan sesuai index
-                    moved_puzzle = Puzzle(e_node.puzzle_obj.puzzle, i)
-                    if moved_puzzle.move_index!=-1: #perpindahan valid maka tambahkan simpul
-                        child = Node(e_node, moved_puzzle, e_node.level+1)
-                        self.generated_node+=1
-                        live_node.put(child)
-
-            elif (e_node.puzzle_obj.difference == 0): # Solusi ditemukan ketika semua ubin berada pada posisi sesuai nomor (difference = 0)
+            if (e_node.puzzle_obj.difference == 0): # Solusi ditemukan ketika semua ubin berada pada posisi sesuai nomor (difference = 0)
                 self.print_solution(e_node)
                 self.is_found = True
                 print("\nJumlah simpul yang dibangkitkan:", self.generated_node)
                 
             else:
                 for i in range(4):
-                    if ( (e_node.puzzle_obj.move_index%2 != i%2) or (e_node.puzzle_obj.move_index == i) ): #
+                    if ( (e_node.puzzle_obj.move_index%2 != i%2) or (e_node.puzzle_obj.move_index == i) or (e_node.parent == None) ): #
                         moved_puzzle = Puzzle(e_node.puzzle_obj.puzzle, i)
                         if moved_puzzle.move_index!=-1: #perpindahan valid maka tambahkan simpul
                             child = Node(e_node, moved_puzzle, e_node.level+1)
