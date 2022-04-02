@@ -3,7 +3,7 @@ from Puzzle import Puzzle
 class PuzzleRoot(Puzzle):
     def __init__(self, filename):
         self.puzzle = []
-        self.load_puzzle('../test/'+filename)
+        self.load_puzzle('test/'+filename)
         self.kurang_i=[]
         self.value_X = 0
         self.move_index = -1

@@ -47,6 +47,12 @@ class Puzzle:
     def pos_to_number(self, pos):
         row, col = self.pos_to_rowcol(pos)
         return self.puzzle[row][col]
+
+    def number_to_rowcol(self,number):
+        for i in range(4):
+            for j in range(4):
+                if self.puzzle[i][j] == number:
+                    return i,j
     
     def move(self, move_index):
         # move_index:

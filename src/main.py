@@ -6,7 +6,7 @@ import time
 if __name__ == "__main__":
     print("\n...-=15-Puzzle Solver=-...")
     filename = input("\nMasukkan nama file puzzle yang akan diselesaikan (.txt): ")
-    filename = "reachable3.txt"
+    filename = "reachable2.txt"
 
     puzzle_root = PuzzleRoot(filename)
     print("\nPuzzle berhasil dimuat.")
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     else:
         print("\nPuzzle dapat diselesaikan. \n")
         start_timer = time.time()
-        SolvePuzzle(puzzle_root)
+        solve = SolvePuzzle(puzzle_root)
         print(f"Waktu eksekusi program: {time.time()-start_timer} s")
         
         

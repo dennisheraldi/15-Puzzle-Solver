@@ -20,8 +20,8 @@ class SolvePuzzle:
         self.generated_node = 0
         # Inisialisasi flag
         self.is_found = False
-        # Inisialisasi steps counter
-        self.steps = 0 
+        # Inisialisasi steps untuk menyimpan langkah penyelesaian
+        self.steps = [] 
         # Inisialisasi priority queue pada simpul hidup
         live_node = PriorityQueue()
         # Inisialisasi akar yaitu state awal puzzle 
@@ -60,8 +60,8 @@ class SolvePuzzle:
             # 0 : up, 1 : right, 2 : down, 3 : left
             direction = ["UP", "RIGHT", "DOWN", "LEFT"]
             if node.puzzle_obj.move_index!=-1:
-                self.steps+=1
-                print(f"Langkah {self.steps}: {direction[node.puzzle_obj.move_index]}")
+                self.steps.append(node.puzzle_obj.move_index)
+                print(f"Langkah {len(self.steps)}: {direction[node.puzzle_obj.move_index]}")
                 node.puzzle_obj.print_puzzle()
 
 
