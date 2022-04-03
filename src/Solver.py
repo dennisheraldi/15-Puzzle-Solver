@@ -1,6 +1,7 @@
 from queue import PriorityQueue
 from copy import deepcopy
 from Puzzle import Puzzle
+import time
 
 class Node:
     def __init__(self, parent, puzzle_obj, level):
@@ -16,6 +17,8 @@ class Node:
 class SolvePuzzle:
     # initial_puzzle telah terdefinisi sebagai objek puzzle state awal
     def __init__(self,initial_puzzle):
+        # Mencatat waktu awal eksekusi algoritma
+        self.start_timer = time.time()
         # Counter simpul yang dibangkitkan
         self.generated_node = 0
         # Inisialisasi flag
@@ -37,8 +40,11 @@ class SolvePuzzle:
 
             if (e_node.puzzle_obj.difference == 0): # Solusi ditemukan ketika semua ubin berada pada posisi sesuai nomor (difference = 0)
                 self.print_solution(e_node)
+                self.end_timer = time.time() # mencatat waktu akhir eksekusi algoritma
+                self.exc_time = self.end_timer - self.start_timer # menghitung waktu eksekusi algoritma
                 self.is_found = True
                 print("\nJumlah simpul yang dibangkitkan:", self.generated_node)
+                print(f"Waktu eksekusi program: {self.exc_time:.6f} s")
                 
             else:
                 for i in range(4):
