@@ -21,7 +21,6 @@ dengan taksiran cost simpul x untuk sampai ke goal. Taksiran cost yang digunakan
 jumlah ubin tidak kosong yang tidak berada pada tempat sesuai susunan akhir (goal state). GUI program dibangun menggunakan Tkinter
 
 Penjelasan singkat mengenai folder/file: <br>
-`bin` berisi script untuk menjalankan program <br>
 `src` berisi source code dari program Python <br>
 `test` berisi data uji <br>
 `doc` berisi laporan dan spesifikasi tugas <br>
@@ -40,7 +39,7 @@ Penjelasan singkat mengenai folder/file: <br>
 
 1. Pastikan telah mengunduh dan menginstal Python sesuai dengan _requirement_ program diatas. <br>
 2. Ekstrak file Tucil3_13520139.zip ke folder yang sudah dibuat dan akses folder hasil ekstrak. <br>
-3. Masuk ke folder `bin`. Pengguna dapat dengan mudah menjalankan file bernama `run_cli.bat` untuk menjalankan program dalam CLI atau `run_gui.bat` untuk menjalankan program dalam GUI
+3. Pengguna dapat dengan mudah menjalankan file bernama `run_cli.bat` untuk menjalankan program dalam CLI atau `run_gui.bat` untuk menjalankan program dalam GUI
 4. Apabila program berhasil dijalankan, pengguna akan diminta untuk memasukkan input file matriks awal puzzle.
 5. Pastikan file matriks awal puzzle yang ingin diselesaikan telah diletakkan pada folder `test`
 6. Jika file berhasil dimuat, maka akan muncul pada layar fungsi Kurang(i), nilai X, dan langkah penyelesaian puzzle. Animasi penyelesaian puzzle dapat terlihat jika menjalankannya mengguna GUI.
