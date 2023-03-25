@@ -1,4 +1,4 @@
-# Tucil3_13520139
+# 15-Puzzle-Solver
 
 Tugas Kecil 3 IF2211 Strategi Algoritma <br>
 Penyelesaian Persoalan 15-Puzzle dengan Algoritma _Branch and Bound_ <br>
